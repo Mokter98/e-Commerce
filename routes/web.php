@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+
+    Route::get('/add-product',[ProductController::class,'addProduct'])->name('add-product');
+    Route::get('/manage-product',[ProductController::class,'manageProduct'])->name('manage-product');
 });
