@@ -7,12 +7,15 @@
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Add Product Form</h3></div>
                     <div class="card-body">
-                        <form>
+
+                        <form action="{{ route('new-product') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" type="text" name="product_name" placeholder="Enter product name" />
-                                        <label for="inputFirstName">product name</label>
+                                        <input class="form-control" id="name" type="text" name="product_name" placeholder="Enter product name" />
+                                        <label for="inputProductName">product name</label>
                                     </div>
                                 </div>
 
@@ -21,32 +24,32 @@
                           <div class="row mb-3">
                                  <div class="col-md-6">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputEmail" type="text" name="category_name" placeholder="Category Name" />
-                                        <label for="inputEmail">Category Name</label>
+                                        <input class="form-control"  type="text" name="category_name" placeholder="Category Name" />
+                                        <label for="inputCategoryName">Category Name</label>
                                     </div>
                                   </div>
 
                                   <div class="col-md-6">
                                       <div class="form-floating mb-3">
-                                         <input class="form-control" id="inputEmail" type="text" name="brand_name" placeholder="Brand Name" />
-                                         <label for="inputEmail">Brand Name</label>
+                                         <input class="form-control"  type="text" name="brand_name" placeholder="Brand Name" />
+                                         <label for="inputBrandName">Brand Name</label>
                                       </div>
                                   </div>
 
                           </div>
 
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="inputEmail" type="text"  placeholder="Price" />
-                                <label for="inputEmail">Price</label>
+                                <input class="form-control" type="number" placeholder="Price" name="Price" />
+                                <label for="inputPrice">Price</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
-                                <label for="inputEmail">Description</label>
+                                <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
+                                <label for="inputDescription">Description</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="inputEmail" type="file" name="image"/>
+                                <input class="form-control" type="file" name="image"/>
                             </div>
 
 
@@ -66,7 +69,9 @@
 {{--                            </div>--}}
 
                             <div class="mt-4 mb-0">
-                                <div class="d-grid"><a class="btn btn-primary btn-block" href="login.html">Create Account</a></div>
+                                <div class="d-grid">
+                                    <input type="submit" class="form-control btn btn-success" value="Submit">
+                                </div>
                             </div>
                         </form>
                     </div>
