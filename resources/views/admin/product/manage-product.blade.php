@@ -21,11 +21,11 @@
                     @php $i=1; @endphp;
                     @foreach($products as $product)
                     <tr>
-                        <td>{{ $i++ }}</td>
+                        <td>{{$i++}}</td>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ $product->category_name }}</td>
                         <td>{{ $product->brand_name }}</td>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->Price }}</td>
                         <td>{{ $product->description }}</td>
                         <td><img style="width: 80px; height: 80px" src="{{asset($product->image)}}" alt=""></td>
                         <td></td>
