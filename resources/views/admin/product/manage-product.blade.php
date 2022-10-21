@@ -13,6 +13,7 @@
                             <th>Brand Name</th>
                             <th>Price</th>
                             <th>Description</th>
+                            <th>status</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -27,8 +28,16 @@
                         <td>{{ $product->brand_name }}</td>
                         <td>{{ $product->Price }}</td>
                         <td>{{ $product->description }}</td>
+                        <td>{{ $product->status==1?'published':'unpublished' }}</td>
                         <td><img style="width: 80px; height: 80px" src="{{asset($product->image)}}" alt=""></td>
-                        <td></td>
+                        <td>
+                            @if($product->status==1)
+                                <a href="{{ route('status',['id'=>$product->id]) }}" class="btn btn-warning">Unpublished</a>
+                            @else
+                                <a href="{{ route('status',['id'=>$product->id]) }}" class="btn btn-primary">Published</a>
+                            @endif
+                                <a href="{{ route('edit',['id'=>$product->id]) }}" class="btn btn-primary">Edit</a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
